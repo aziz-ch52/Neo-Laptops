@@ -1,0 +1,310 @@
+/* ================================== */
+/* ==   1. Theme & Variables       == */
+/* ================================== */
+:root {
+  --bs-body-bg: #0a0c1e;
+  --bs-body-color: #adb5bd;
+  --bs-border-color: rgba(255, 255, 255, 0.15);
+  /* MODIFIED: Softer */
+  --bs-primary: #00f0ff;
+  --bs-secondary: #8000ff;
+  --bs-light: #161a33;
+  --bs-font-sans-serif: 'Poppins', sans-serif;
+}
+
+/* ================================== */
+/* ==   2. Global Styles           == */
+/* ================================== */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-font-sans-serif);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--bs-white);
+  font-weight: 600;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
+/* ================================== */
+/* ==   3. Navbar (ENHANCED)       == */
+/* ================================== */
+.navbar {
+  background-color: rgba(10, 12, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--bs-white);
+}
+
+.navbar-brand:hover {
+  color: var(--bs-primary);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--bs-primary);
+}
+
+.navbar-toggler {
+  border-color: var(--bs-border-color);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 240, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%c/svg%3e");
+}
+
+.form-control-dark {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-white);
+}
+
+.form-control-dark:focus {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+  color: var(--bs-white);
+}
+
+/* ================================== */
+/* == 3.5 BUTTONS (ENHANCED)       == */
+/* ================================== */
+.btn-outline-primary-enhanced {
+  background-color: transparent;
+  color: var(--bs-primary);
+  border: 2px solid var(--bs-primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary-enhanced:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-body-bg);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* NEW: Solid CTA Button (Cyan, for "Start Shopping") */
+.btn-primary-solid-glow {
+  background-color: var(--bs-primary);
+  color: var(--bs-body-bg);
+  /* High contrast */
+  font-weight: 700;
+  border: 2px solid var(--bs-primary);
+  border-radius: 50px;
+  padding: 0.8rem 2.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.btn-primary-solid-glow:hover {
+  background-color: transparent;
+  color: var(--bs-primary);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+  transform: scale(1.03);
+}
+
+/* NEW: Solid CTA Button (Purple, for "Checkout") */
+.btn-secondary-solid-glow {
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+  font-weight: 700;
+  border: 2px solid var(--bs-secondary);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.4);
+  padding: 0.75rem 1.5rem;
+  /* Copied from old .btn-checkout */
+}
+
+.btn-secondary-solid-glow:hover {
+  background-color: transparent;
+  color: var(--bs-secondary);
+  box-shadow: 0 0 30px rgba(128, 0, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.nav-icons {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-icons .bi:hover {
+  color: var(--bs-primary);
+}
+
+/* ================================== */
+/* ==   4. Cart Page (ENHANCED)    == */
+/* ================================== */
+.page-header {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: var(--bs-primary);
+  --bs-breadcrumb-item-active-color: var(--bs-primary);
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+  font-weight: 600;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--bs-white);
+}
+
+/* ENHANCED: Glass/Glow effect for cards */
+.cart-item-card,
+.summary-card {
+  background: linear-gradient(160deg, var(--bs-light) 0%, #0f1124 100%);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-item-card::before,
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.07), transparent 70%);
+  opacity: 1;
+  /* Always on */
+  z-index: 1;
+}
+
+.cart-item-card>*,
+.summary-card>* {
+  position: relative;
+  z-index: 2;
+  /* Content above glow */
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: var(--bs-body-bg);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.quantity-input {
+  width: 70px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-white);
+}
+
+.quantity-input:focus {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+  color: var(--bs-white);
+}
+
+.btn-remove {
+  color: var(--bs-body-color);
+  font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+  color: var(--bs-danger);
+}
+
+/* Modal style */
+.modal-content {
+  background: linear-gradient(160deg, var(--bs-light) 0%, #0f1124 100%);
+  border: 1px solid var(--bs-border-color);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100) brightness(200%);
+}
+
+/* ================================== */
+/* ==   8. Footer (ENHANCED)       == */
+/* ================================== */
+.footer {
+  background-color: var(--bs-light);
+  border-top: 1px solid var(--bs-border-color);
+}
+
+.footer-links a {
+  color: var(--bs-body-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--bs-primary);
+  padding-left: 5px;
+}
+
+.footer-socials a {
+  color: var(--bs-body-color);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--bs-primary);
+  transform: scale(1.1);
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--bs-white);
+}
+
+.footer-bottom {
+  background-color: var(--bs-body-bg);
+}
+
+/* ================================== */
+/* ==   9. Animation (JS)          == */
+/* ================================== */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
